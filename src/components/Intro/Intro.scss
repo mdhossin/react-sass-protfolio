@@ -1,0 +1,105 @@
+@import "../../global.scss";
+@import "../../mixins/mixins";
+.intro {
+  background-color: $white;
+  display: flex;
+
+  &__left {
+    flex: 0.5;
+
+    overflow: hidden;
+    @include breakpoints-down(large){
+      flex: 1;
+    }
+
+    .imgContainer {
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      float: right;
+      @include breakpoints-down(large){
+        float: left;
+      }
+
+     
+
+      img {
+        height: 90%;
+
+      }
+    }
+  }
+
+  &__right {
+    flex: 0.5;
+
+    @include breakpoints-down(large){
+      flex: 1;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 3.1rem;
+      position: relative;
+
+      h1 {
+        font-size: 3.75rem;
+        margin: 0.625rem 0;
+        color: rgb(22, 21, 21);
+      }
+      h5 {
+        font-size: 1.2rem;
+        color: rgba(122, 10, 33, 0.801);
+      }
+      h3 {
+        font-size: 1.875rem;
+
+        span {
+          font-size: inherit;
+          color: crimson;
+
+         
+        }
+
+        .ityped-cursor {
+          animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+          50% {
+            opacity: 1;
+            color: bisque;
+          }
+
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    a {
+      position: absolute;
+      bottom: 0.625rem;
+      left: 75%;
+
+      img {
+        width: 40px;
+        animation: arrowLink 2s infinite;
+
+        @keyframes arrowLink {
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}

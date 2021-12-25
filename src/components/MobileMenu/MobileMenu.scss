@@ -1,0 +1,51 @@
+@import '../../global.scss';
+@import '../../mixins/mixins';
+
+.mobileMenu{
+    width: 300px;
+    height: 100vh;
+    background-color: $mainColor;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+
+    @include breakpoints-down(large){
+       width: 100%;
+       right: -100%;
+    }
+    &.active{
+        right: 0;
+    }
+   
+
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+
+        li{
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 24px;
+                font-weight: 400;
+                transition: color 350ms ease-in-out;
+
+                &:hover{
+                    color: rgb(146, 146, 150);
+                }
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,44 @@
+
+// 320px = 20em
+// 480px = 30em
+// 600px = 37.5em
+// 768px =  48em
+// 900px 
+// 1024px = 64em
+
+// 1200px = 75em
+
+// 40em = 640/16
+// 64em = 1024/16
+// 87.5em = 1400/16
+// 640px, 1024px, 1400px min-width
+$breakponits-up: (
+  "xsmall" : "20em",
+  "small" : "30em",
+  "medium": "37.5em",
+  "large": "48em",
+  "xlarge": "64em",
+  "xxlarge": "75rem"
+);
+
+// 639px, 1023px, 1399px max-width
+$breakponits-down: (
+  "xsmall" : "20em",
+  "small" : "30em",
+  "medium": "37.5em",
+  "large": "48em",
+  "xlarge": "64em",
+  "xxlarge": "75rem"
+);
+
+@mixin breakpoints-up($size) {
+  @media (min-width: map-get($breakponits-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoints-down($size) {
+  @media (max-width: map-get($breakponits-down, $size)) {
+    @content;
+  }
+}
